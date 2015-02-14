@@ -66,12 +66,12 @@ void ofxShadow::setLightPosition(const ofVec4f& pos)
 	
 	float dot = inner_product(groundplane, groundplane + 4, lightpos, 0.f);
 	
-	for (int y = 0; y < 4; ++y)
+	for (int z = 0; z < 4; ++z)
 	{
 		for (int x = 0; x < 4; ++x)
 		{
-			shadowMatrix[y * 4 + x] = -groundplane[y] * lightpos[x];
-			if (x == y) shadowMatrix[y * 4 + x] += dot;
+			shadowMatrix[z * 4 + x] = -groundplane[z] * lightpos[x];
+			if (x == z) shadowMatrix[z * 4 + x] += dot;
 		}
 	}
 }
