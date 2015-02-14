@@ -23,7 +23,7 @@ public:
         // updating light position
         float light_moving_speed = 0.1;
         float light_moving_radius = 50.;
-        light_pos = ofVec3f(-200, 250, sin(2.0 * M_PI * (ofGetElapsedTimef()*light_moving_speed)) * light_moving_radius);
+        light_pos = ofVec3f(sin(2.0 * M_PI * (ofGetElapsedTimef()*light_moving_speed)) * light_moving_radius, 100, 200);
         simple_shadow.setLightPosition(light_pos);
     }
     
@@ -48,14 +48,16 @@ public:
             
             // red box
             ofSetColor(255, 0, 0);
-            //ofDrawBox(50, 150, 0, 30);
-            ofSphere(50, 150, 0, 30);
+            ofSphere(50, 150, 100, 10);
+            ofSphere(80, 100, 140, 10);
+            ofSphere(100, 50, 120, 10);
             
             
             // shadow
             simple_shadow.begin();
-            //ofDrawBox(50, 150, 0, 30);
-            ofSphere(50, 150, 0, 30);
+            ofSphere(50, 150, 100, 10);
+            ofSphere(80, 100, 140, 10);
+            ofSphere(100, 50, 120, 10);
             simple_shadow.end();
             
             glDisable(GL_DEPTH_TEST);

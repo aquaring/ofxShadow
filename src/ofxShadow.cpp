@@ -58,7 +58,7 @@ void ofxShadow::setLightPosition(const ofVec3f& pos)
 
 void ofxShadow::setLightPosition(const ofVec4f& pos)
 {
-	static const float groundplane[] = { 0.0, 1.0, 0.0, 1.0 };
+	static const float groundplane[] = { 0.0, 0.0, 1.0, 1.0 };
 	const float* lightpos = pos.getPtr();
 	
 	shadow_matrix.makeIdentityMatrix();
